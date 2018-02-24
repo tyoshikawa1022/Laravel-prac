@@ -12,18 +12,19 @@
     </div>
     @endif
 
-    <form method="POST" action="{{ route('form::save') }}">
+    <form method="POST" action="{{action('FormController@save')}}">
+    <!-- <form method="POST" action="{{ route('form::save') }}"> -->
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
  
-        <div class="form-group">
-            <label>氏名</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="name" placeholder="氏名を入力してください">
+        <div>
+            <label>氏名</label><span必須</span>
+            <input type="text" name="name" placeholder="氏名を入力してください">
         </div>
-        <div class="form-group">
-            <label>電話番号</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="tel" placeholder="電話番号を入力してください">
+        <div>
+            <label>電話番号</label><span必須</span>
+            <input type="text" name="tel" placeholder="電話番号を入力してください">
         </div>
-        <div class="form-group">
+        <div>
             <label>メールアドレス</label><span class="label label-danger">必須</span>
             <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください">
         </div>
