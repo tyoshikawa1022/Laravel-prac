@@ -26,23 +26,22 @@ class EmployeeController extends Controller
      */
 
     public function save(Request $request)
-{
+    {
+
     // データベース登録
     $employee = new Employee;
-
-    $employee = $request->all();
-    // $employee->name = $request->name;
-    // $employee->tel = $request->tel;
-    // $employee->email = $request->email;
-    // $employee->gender = $request->gender;
-    // $employee->content = $request->content;
-    $employee->save();
-
-
-    // リロード等による二重送信防止
-    $request->session()->regenerateToken();
+    $employee->fill($request->all())->save();
 
     return view('employee.complete');
-}
+    }
+
+    //一覧表示
+    public function list()
+    {
+
+        $employees = Employee::all();
+        return view('employee.list')->with('employees',$employees);
+    }
+
 
 }

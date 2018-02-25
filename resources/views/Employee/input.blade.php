@@ -2,14 +2,12 @@
 <div class="container">
     <h3>Laravelで簡単なフォームを作ってみる</h3>
  
-    @if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
+    @if ($errors->any())
+    <ul>
+        @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
+        @endforeach
+    </ul>
     @endif
 
     <form method="POST" action="{{action('EmployeeController@save')}}">

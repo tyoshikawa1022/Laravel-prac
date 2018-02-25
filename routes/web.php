@@ -20,12 +20,5 @@ Route::get('/', function () {
 Route::get('/input','EmployeeController@input');
     // 完了画面
 Route::post('/complete', 'EmployeeController@save');
-
-//下記はgroup化した場合
-// Route::group(['as' => 'form::'], function() {
-//     // 入力画面
-//     Route::get('/new', ['as' => 'input', 'uses' => 'EmployeeController@new']);
-//     // 完了画面
-//     Route::post('/complete', ['as' => 'save', 'uses' => 'EmployeeController@save']);
-
-// });
+    //社員一覧画面
+Route::get('/list','EmployeeController@list');
