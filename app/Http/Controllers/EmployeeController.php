@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Employee;
+use App\Employee; //Employeeモデルを呼び出す
 
 class EmployeeController extends Controller
 {
